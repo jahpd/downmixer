@@ -1,0 +1,84 @@
+#N canvas 546 67 716 517 10;
+#X obj 14 35 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X text 13 12 L;
+#X obj 71 35 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X obj 130 34 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X obj 187 34 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X obj 244 34 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X text 70 12 R;
+#X text 129 11 Ls;
+#X text 186 11 Rs;
+#X text 243 11 C;
+#X obj 305 33 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X text 301 12 LFE;
+#X obj 12 175 mixer.vumeter.OUT;
+#X obj 6 403 outlet~;
+#X obj 56 403 outlet~;
+#X obj 106 403 outlet~;
+#X obj 156 403 outlet~;
+#X obj 207 403 outlet~;
+#X obj 12 -14 inlet~;
+#X obj 71 -14 inlet~;
+#X obj 132 -15 inlet~;
+#X obj 190 -16 inlet~;
+#X obj 244 -15 inlet~;
+#X obj 310 178 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X text 309 199 B;
+#X text 309 215 Y;
+#X text 310 228 P;
+#X text 310 240 A;
+#X text 310 255 S;
+#X text 310 271 S;
+#X obj 405 45 spigot~;
+#X obj 454 45 spigot~;
+#X obj 502 45 spigot~;
+#X obj 551 45 spigot~;
+#X obj 600 45 spigot~;
+#X obj 405 121 *~;
+#X obj 454 121 *~;
+#X obj 502 120 *~;
+#X obj 551 120 *~;
+#X obj 600 120 *~;
+#X connect 0 0 35 1;
+#X connect 2 0 36 1;
+#X connect 3 0 37 1;
+#X connect 4 0 38 1;
+#X connect 5 0 39 1;
+#X connect 12 0 13 0;
+#X connect 12 1 14 0;
+#X connect 12 2 15 0;
+#X connect 12 3 16 0;
+#X connect 12 4 17 0;
+#X connect 18 0 30 0;
+#X connect 19 0 31 0;
+#X connect 20 0 32 0;
+#X connect 21 0 33 0;
+#X connect 22 0 34 0;
+#X connect 23 0 30 1;
+#X connect 23 0 31 1;
+#X connect 23 0 32 1;
+#X connect 23 0 33 1;
+#X connect 23 0 34 1;
+#X connect 30 0 35 0;
+#X connect 30 1 12 0;
+#X connect 31 0 36 0;
+#X connect 31 1 12 1;
+#X connect 32 0 37 0;
+#X connect 32 1 12 2;
+#X connect 33 0 38 0;
+#X connect 33 1 12 3;
+#X connect 34 0 39 0;
+#X connect 34 1 12 4;
+#X connect 35 0 12 0;
+#X connect 36 0 12 1;
+#X connect 37 0 12 2;
+#X connect 38 0 12 3;
+#X connect 39 0 12 4;
+#X coords 0 -1 1 1 330 330 1 7 10;

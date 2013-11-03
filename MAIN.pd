@@ -1,0 +1,88 @@
+#N canvas 208 22 1157 852 10;
+#X obj -352 -91 multichannel.player 5;
+#X obj -352 20 mixer.fader;
+#X text -173 -77 DOWNMIXER 5.1;
+#X text -174 -91 **************;
+#X text -174 -61 **************;
+#X text -172 -48 pega um arquivo de extensões .wav ou .aiff e reduz
+para estéreo \, conforme a recomendação ITU-R BS 1116 \; permite comparação
+entre os sinais de entrada e de saída;
+#X obj -238 380 downmix_5.1~;
+#X obj -304 408 mixer.vumeter.STEREO.OUT;
+#X obj -228 576 dac~ 1 2;
+#X text -15 50 Sons continuos;
+#X text -15 67 Sons de impacto de banda estreita;
+#X text -15 85 Sons de impacto de banda larga;
+#X text -15 103 Fala;
+#X text -14 124 Trabalhar apenas com reprodução e gravação em 24bits
+e SR 48000;
+#X text -16 200 Fazer pressets para que usuários possam salvar seus
+parâmetros;
+#X text -14 177 TESTE DE AUDIBILIDADE;
+#X text -14 166 ----------------------;
+#X text -12 186 ----------------------;
+#X text -13 237 Protocolo 1: a) 20 pessoas (audibilidade normal);
+#X text 65 252 b) 4 pessoas (audibilidade deficiente);
+#X text 65 269 c) distribuir igualmente \, o quanto possível \, entre
+homens e mulheres;
+#X text 66 299 d) Devem trabalhar com música ou produção musical;
+#X text 66 316 e) Na vespera: não pode ter ficado em exposição de ruído
+por muito tempo \, e não;
+#X text -11 371 Experimento: a) Teste de audibilidade dos sujeitos
+(3 min);
+#X text -16 22 Amostras para fazer testes;
+#X text 224 441 iv) presset 3;
+#X text 225 458 v) original;
+#X text -17 12 --------------------------;
+#X text -17 33 --------------------------;
+#X text 64 486 c) Pergunta a ser feita para as pessoas: qual som se
+aproxima do original?;
+#X text 66 392 b) exposição de amostras: i)original (1 min max) ->
+em 5.1;
+#X text 222 409 ii) presset 1 (1 min max) -> downmix;
+#X text 223 425 iii) presset 2 (1 min max) -> downmix;
+#X text 307 440 (1 min max) -> downmix;
+#X text 296 457 (1 min max) -> em 5.1;
+#X text 56 567 d) Mostrar o presset para o usuário \, onde ele seleciona
+um presset \, para poder ver se o que ele falou é coerente com o que
+ele selecionou;
+#X text 397 -5 Definir espaço vertorial:;
+#X text 503 53 |e11 \, e12 \, e13|;
+#X text 503 66 |e21 \, e22 \, e23|;
+#X text 507 90 Eij -> (Hf \, i);
+#X text 507 111 Hf -> altura de filtragem;
+#X text 506 128 i -> intensidade;
+#X text 397 31 [L \, R \, C \, Ls \, Rs] * Matrix5x2 = [L \, R];
+#X text 397 18 (matriz original);
+#X text 589 17 (matriz resultante);
+#X text -337 591 Formula downmix;
+#X text -338 685 a \, b \, c \, d -> coeficientes para pressets;
+#X text -338 647 f(x) -> filtragem de sinal;
+#X text 59 521 d) Pergunta a ser feita para as pessoas: qual som é
+o mais diferente;
+#X text -337 660 Q -> parametro a ser testado no presset \, inicialmente
+2;
+#X text -335 609 L = aL + bR + C/Q + [f(Ls)*0.7]/P +[f(Rs)*0.3]/P;
+#X text -336 672 P -> parametro a ser testado no presset \, inicialmente
+4;
+#X text -336 622 R = cL + dR + C/Q + [f(Ls)*0.3]/P +[f(Rs)*0.7]/P;
+#X msg 607 284;
+#X floatatom 556 314 5 0 0 0 - - -;
+#X floatatom 557 387 5 0 0 0 - - -;
+#X obj 555 338 expr log10($f1);
+#X connect 0 0 1 0;
+#X connect 0 1 1 1;
+#X connect 0 2 1 2;
+#X connect 0 3 1 3;
+#X connect 0 4 1 4;
+#X connect 1 0 6 0;
+#X connect 1 1 6 1;
+#X connect 1 2 6 2;
+#X connect 1 3 6 3;
+#X connect 1 4 6 4;
+#X connect 6 0 7 0;
+#X connect 6 1 7 1;
+#X connect 7 0 8 0;
+#X connect 7 1 8 1;
+#X connect 54 0 56 0;
+#X connect 56 0 55 0;
